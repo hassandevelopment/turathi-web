@@ -3,6 +3,9 @@
 ## What this is
 PanoPros client build. A personal-brand website for Turathi, a Bahraini
 traditional-architecture designer (Instagram @turathi.bh). Confirmed paid client.
+Founder: Ammar, a Bahraini architect and mechanical engineer. Turathi is the
+brand and movement, not the person's name. First-person "I" across the site is
+Ammar; the wordmark, nav, logo, and domain stay Turathi.
 
 ## The one job
 Win him design clients (interiors and buildings rooted in Bahraini heritage).
@@ -18,6 +21,9 @@ as receipts. A real portfolio grows in over the next year.
 His own Instagram voice: provocative but warm, plain, British spelling
 (neighbourhood, human-centred). English only. Never AI-sounding. Copy is drawn
 from his real captions.
+All on-page copy is Turathi speaking in first person: "I", "my", "we". NEVER
+"he", "his", or "your" to describe him. Example: "What he designs" becomes
+"What I design"; "His hand drawings" becomes "My drawings".
 
 ## Brand (do not guess)
 - Colour: deep royal NAVY pulled from his actual logo file. DO NOT use #0000FF,
