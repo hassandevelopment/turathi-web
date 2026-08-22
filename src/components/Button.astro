@@ -1,0 +1,23 @@
+---
+// Simple CTA link. variant "solid" is the navy filled button,
+// "outline" is a bordered variant for secondary use.
+interface Props {
+  href: string;
+  variant?: "solid" | "outline" | "light-outline";
+  class?: string;
+}
+const { href, variant = "solid", class: className = "" } = Astro.props;
+
+const base =
+  "inline-block font-display uppercase tracking-wider text-sm px-6 py-3 transition-colors";
+const variants = {
+  solid: "bg-navy text-white hover:bg-accent",
+  outline: "border border-navy text-navy hover:bg-navy hover:text-white",
+  "light-outline": "border border-white text-white hover:bg-white hover:text-navy",
+};
+const styles = variants[variant];
+---
+
+<a href={href} class={`${base} ${styles} ${className}`}>
+  <slot />
+</a>

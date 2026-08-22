@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import Belief from "../components/Belief.astro";
+import Offer from "../components/Offer.astro";
+import Movement from "../components/Movement.astro";
+import Events from "../components/Events.astro";
+import Octagon from "../components/Octagon.astro";
+import Craft from "../components/Craft.astro";
+import Journal from "../components/Journal.astro";
+import ClosingCta from "../components/ClosingCta.astro";
+---
+
+<BaseLayout title="Turathi">
+  {/* Section order is locked. Top bar and footer come from BaseLayout. */}
+  <Hero />
+  <Belief />
+  <Offer />
+  <Movement />
+  <Events />
+  <Octagon />
+  <Craft />
+  <Journal />
+  <ClosingCta />
+</BaseLayout>

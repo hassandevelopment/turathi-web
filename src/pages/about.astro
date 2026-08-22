@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Placeholder from "../components/Placeholder.astro";
+
+// Partners strip placeholders. Real logos added later.
+const partners = ["Partner 01", "Partner 02", "Partner 03", "Partner 04"];
+---
+
+<BaseLayout
+  title="About | Turathi"
+  description="Placeholder. About Turathi and selected work."
+>
+  <section class="max-w-6xl mx-auto px-4 py-24">
+    <div class="grid gap-10 md:grid-cols-2 items-start">
+      <div>
+        <h1 class="text-3xl sm:text-5xl text-navy">About</h1>
+        <p class="mt-6 text-lg text-navy/70 max-w-xl">
+          Placeholder bio. Who he is, where he comes from, and why heritage-led
+          design matters to him.
+        </p>
+      </div>
+      {/* Real photo of him pending his shoot. */}
+      <Placeholder label="Photo of Turathi" class="w-full aspect-[4/5]" />
+    </div>
+  </section>
+
+  {/* Works and Projects are folded into About for now, until real client work exists. */}
+  <section class="max-w-6xl mx-auto px-4 pb-24">
+    <h2 class="text-2xl text-navy">Selected work</h2>
+    <p class="mt-3 text-navy/70 max-w-2xl">
+      Placeholder. Projects will grow in here over the next year. These entries
+      will come from the projects content collection.
+    </p>
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+      <Placeholder label="Project 01" class="aspect-[4/3]" />
+      <Placeholder label="Project 02" class="aspect-[4/3]" />
+      <Placeholder label="Project 03" class="aspect-[4/3]" />
+    </div>
+  </section>
+
+  {/* Partners strip. */}
+  <section class="bg-stone/60">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <p class="text-sm uppercase tracking-wider text-navy/50">Partners</p>
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {partners.map((p) => <Placeholder label={p} class="h-20" />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

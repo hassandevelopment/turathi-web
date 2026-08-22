@@ -1,0 +1,47 @@
+---
+// Fonts loaded via @fontsource so nothing is fetched from Google at runtime.
+import "@fontsource/cinzel/400.css";
+import "@fontsource/cinzel/600.css";
+import "@fontsource/cinzel/700.css";
+import "@fontsource/eb-garamond/400.css";
+import "@fontsource/eb-garamond/500.css";
+import "@fontsource/eb-garamond/600.css";
+import "@fontsource/eb-garamond/400-italic.css";
+
+import "../styles/global.css";
+import TopBar from "../components/TopBar.astro";
+import Footer from "../components/Footer.astro";
+import FloatingCta from "../components/FloatingCta.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Turathi",
+  description = "Placeholder description. Bahraini traditional architecture and design.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    {/* TODO: social share image (logo + hero line) once the asset exists. */}
+    {/* TODO: Google Analytics + UTM setup goes here. Not wired yet. */}
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <TopBar />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <FloatingCta />
+  </body>
+</html>

@@ -1,0 +1,52 @@
+---
+import Button from "./Button.astro";
+
+// Internal nav plus one external link out to the Journal (Substack).
+const navLinks = [
+  { label: "The Movement", href: "/the-movement" },
+  { label: "Events & Sessions", href: "/events" },
+  { label: "The Turathi Octagon", href: "/the-turathi-octagon" },
+  { label: "About", href: "/about" },
+];
+
+// TODO: confirm real Substack URL. Journal is an external link, not a page.
+const journalUrl = "https://turathi.substack.com";
+---
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-navy/10">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+    <a href="/" class="flex items-center gap-3" aria-label="Turathi home">
+      {/* Logo placeholder. Swap for the real door-motif mark when provided. */}
+      <span
+        class="inline-flex items-center justify-center w-9 h-9 bg-navy text-white text-xs font-display"
+        >TB</span
+      >
+      <span class="font-display text-lg tracking-widest uppercase text-navy"
+        >Turathi</span
+      >
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6 text-sm">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-navy/80 hover:text-navy transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href={journalUrl}
+        target="_blank"
+        rel="noopener"
+        class="text-navy/80 hover:text-navy transition-colors"
+      >
+        Journal
+      </a>
+    </nav>
+
+    <Button href="/work-with-me" class="hidden sm:inline-block">Work with me</Button>
+  </div>
+</header>

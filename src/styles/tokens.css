@@ -1,0 +1,29 @@
+/*
+  Turathi design tokens.
+  Tailwind v4 reads this @theme block and generates utilities such as
+  bg-navy, text-navy, bg-accent, font-display, font-body.
+*/
+@theme {
+  /*
+    REPLACE with exact navy from Turathi logo. NEVER #0000FF.
+    #1B2A6B is a PLACEHOLDER deep royal navy only, pending the real hex
+    pulled from his logo file.
+  */
+  --color-navy: #1B2A6B;
+
+  /* Second brand colour. */
+  --color-white: #ffffff;
+
+  /*
+    TBD accent, do not finalise. Choose aged brass or muted oxblood once
+    the brand is locked. Placeholder brass tone below is a stand-in only.
+  */
+  --color-accent: #9A7B4F;
+
+  /* Neutral grey used for image placeholder boxes. */
+  --color-stone: #e7e5e1;
+
+  /* Fonts. Cinzel for the wordmark and big headings, EB Garamond for body. */
+  --font-display: "Cinzel", Georgia, "Times New Roman", serif;
+  --font-body: "EB Garamond", Georgia, "Times New Roman", serif;
+}

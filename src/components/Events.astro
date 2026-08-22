@@ -1,0 +1,26 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="max-w-6xl mx-auto px-4 py-24">
+  <div class="grid gap-10 md:grid-cols-2 items-center">
+    <div>
+      <p class="text-sm uppercase tracking-wider text-accent">Events & Sessions</p>
+      <h2 class="mt-3 text-2xl sm:text-3xl text-navy">Next session</h2>
+      <p class="mt-4 text-navy/70 max-w-lg">
+        Placeholder for the next session details. Date, place and a line on
+        what it covers.
+      </p>
+      <div class="mt-8">
+        <Button href="/events">Sign up</Button>
+      </div>
+    </div>
+
+    {/* TODO: Luma embed for sign-ups goes here. Not wired yet. */}
+    <div
+      class="border border-dashed border-navy/30 p-8 text-center text-navy/50 text-sm"
+    >
+      Luma sign-up embed placeholder
+    </div>
+  </div>
+</section>

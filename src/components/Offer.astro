@@ -1,0 +1,31 @@
+---
+import Button from "./Button.astro";
+
+const offerings = [
+  { title: "Interiors", body: "Placeholder. What he designs indoors." },
+  { title: "Buildings", body: "Placeholder. Heritage-rooted architecture." },
+  { title: "Consultation", body: "Placeholder. Guidance and direction." },
+];
+---
+
+<section class="max-w-6xl mx-auto px-4 py-24">
+  <h2 class="text-2xl sm:text-3xl text-navy">What he designs</h2>
+  <p class="mt-3 text-navy/70 max-w-2xl">
+    Placeholder intro line for the offer section.
+  </p>
+
+  <div class="mt-10 grid gap-6 sm:grid-cols-3">
+    {
+      offerings.map((o) => (
+        <div class="border border-navy/10 p-6">
+          <h3 class="text-xl text-navy">{o.title}</h3>
+          <p class="mt-2 text-navy/70 text-sm">{o.body}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="mt-10">
+    <Button href="/work-with-me">Work with me</Button>
+  </div>
+</section>

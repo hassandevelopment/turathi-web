@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/*
+  Base element styling. Body text is EB Garamond, headings are Cinzel.
+  Fonts themselves are imported as @fontsource packages in BaseLayout.astro.
+*/
+body {
+  font-family: var(--font-body);
+  color: var(--color-navy);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
