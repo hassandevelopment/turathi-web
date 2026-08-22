@@ -1,0 +1,19 @@
+---
+// Eight-point star jewel, drawn from the logo motif. Filled with a heritage
+// stained-glass colour by default. Used as eyebrow bullets, placeholder
+// markers and small dividers. Tiny detail only, never a large area.
+interface Props {
+  tone?: "blue" | "green" | "brass";
+  class?: string;
+}
+const { tone = "blue", class: className = "w-4 h-4" } = Astro.props;
+const colour = {
+  blue: "text-[color:var(--color-glass-blue)]",
+  green: "text-[color:var(--color-glass-green)]",
+  brass: "text-brass",
+}[tone];
+---
+
+<svg viewBox="0 0 24 24" aria-hidden="true" class={`${colour} ${className}`}>
+  <use href="#turathiStar"></use>
+</svg>

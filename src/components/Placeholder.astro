@@ -1,15 +1,62 @@
 ---
-// A labelled grey placeholder box standing in for a real image until
-// assets arrive. No real photos or drawings are referenced yet.
+// A heritage-styled placeholder standing in for a real image until assets
+// arrive. No real photos are fetched or embedded (rights). Sandy naqsh fill,
+// navy pointed-arch frame with a brass inner line, a glass star and a carved
+// label naming the real asset that lands later.
+// variant "arch" frames portraits and drawings as pointed arches;
+// variant "band" is a plain rectangle for backgrounds and wide slots.
+import Star from "./Star.astro";
 interface Props {
   label: string;
+  variant?: "arch" | "band";
   class?: string;
 }
-const { label, class: className = "" } = Astro.props;
+const { label, variant = "arch", class: className = "" } = Astro.props;
 ---
 
-<div
-  class={`flex items-center justify-center bg-stone text-navy/50 border border-navy/10 select-none ${className}`}
->
-  <span class="font-body text-sm tracking-wide uppercase">{label}</span>
-</div>
+{
+  variant === "arch" ? (
+    <div class={`relative ${className}`}>
+      <div
+        class="absolute inset-0 bg-stone naqsh"
+        style="clip-path:url(#turathiArch);-webkit-clip-path:url(#turathiArch)"
+      />
+      <svg
+        class="absolute inset-0 h-full w-full"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M0,100 L0,44 Q8,3 50,0 Q92,3 100,44 L100,100"
+          fill="none"
+          stroke="#1B2A6B"
+          stroke-width="1.5"
+          vector-effect="non-scaling-stroke"
+        />
+        <path
+          d="M4,100 L4,46 Q11,7 50,4 Q89,7 96,46 L96,100"
+          fill="none"
+          stroke="#B08A46"
+          stroke-width="0.75"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4 text-center">
+        <Star class="w-5 h-5" />
+        <span class="font-display text-[0.62rem] uppercase leading-relaxed tracking-[0.28em] text-navy/55">
+          {label}
+        </span>
+      </div>
+    </div>
+  ) : (
+    <div
+      class={`flex flex-col items-center justify-center gap-3 border border-navy/15 bg-stone naqsh px-4 text-center ${className}`}
+    >
+      <Star class="w-5 h-5" />
+      <span class="font-display text-[0.62rem] uppercase leading-relaxed tracking-[0.28em] text-navy/55">
+        {label}
+      </span>
+    </div>
+  )
+}

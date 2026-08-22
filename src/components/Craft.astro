@@ -1,29 +1,26 @@
 ---
 import Button from "./Button.astro";
 import Placeholder from "./Placeholder.astro";
+import Eyebrow from "./Eyebrow.astro";
 
-// The craft row is proof, not a headline. Grey placeholder boxes stand in
-// for his hand drawings until real scans arrive.
+// The craft row is proof, not a headline. Arch-framed placeholders stand in
+// for the hand drawings until real scans arrive.
 const drawings = ["Drawing 01", "Drawing 02", "Drawing 03", "Drawing 04"];
 ---
 
-<section class="max-w-6xl mx-auto px-4 py-24">
-  <p class="text-sm uppercase tracking-wider text-accent">The Craft</p>
-  <h2 class="mt-3 text-2xl sm:text-3xl text-navy">My drawings</h2>
-  <p class="mt-3 text-navy/70 max-w-2xl">
+<section class="mx-auto max-w-6xl px-4 py-24">
+  <Eyebrow>The Craft</Eyebrow>
+  <h2 class="mt-4 text-2xl text-navy sm:text-3xl">My drawings</h2>
+  <p class="mt-4 max-w-2xl text-navy/70">
     Ideas are cheap until you can draw them. These are the details behind the
     talk, worked out by hand.
   </p>
 
-  <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-    {
-      drawings.map((d) => (
-        <Placeholder label={d} class="aspect-[3/4]" />
-      ))
-    }
+  <div class="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+    {drawings.map((d) => <Placeholder label={d} class="aspect-[3/4]" />)}
   </div>
 
-  <div class="mt-10">
+  <div class="mt-12">
     <Button href="/about" variant="outline">See more of my work</Button>
   </div>
 </section>

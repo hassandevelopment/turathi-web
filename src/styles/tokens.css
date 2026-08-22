@@ -1,13 +1,15 @@
 /*
   Turathi design tokens.
   Tailwind v4 reads this @theme block and generates utilities such as
-  bg-navy, text-navy, bg-accent, font-display, font-body.
+  bg-navy, text-navy, bg-paper, text-brass, font-display, font-body.
+  Palette drawn from traditional Bahraini heritage houses: sandy plaster
+  walls, navy joinery, aged brass, and jewel stained-glass fanlights.
 */
 @theme {
   /*
     REPLACE with exact navy from Turathi logo. NEVER #0000FF.
     #1B2A6B is a PLACEHOLDER deep royal navy only, pending the real hex
-    pulled from his logo file.
+    pulled from his logo file. Navy is now an accent band, not the whole mood.
   */
   --color-navy: #1B2A6B;
 
@@ -15,13 +17,34 @@
   --color-white: #ffffff;
 
   /*
-    TBD accent, do not finalise. Choose aged brass or muted oxblood once
-    the brand is locked. Placeholder brass tone below is a stand-in only.
+    Dominant surface: warm sandy plaster / cream, like a heritage house wall.
+    This is the main background, replacing flat white.
+  */
+  --color-paper: #F1E9D8;
+
+  /* Slightly deeper sand for gentle section banding and placeholder fills. */
+  --color-stone: #E6DAC0;
+
+  /*
+    Aged brass accent. Used sparingly: eyebrow labels, thin rules, dividers,
+    button hover underline, arch detailing.
+    TODO: tune once the real navy lands so brass and navy sit well together.
+  */
+  --color-brass: #B08A46;
+
+  /*
+    Heritage stained-glass accents, use sparingly. Tiny jewel details only:
+    the eight-point star fill, fanlight segments, small dividers.
+    Never as backgrounds, never large areas.
+  */
+  --color-glass-blue: #1F6B86;
+  --color-glass-green: #3B6B4A;
+
+  /*
+    TBD accent from the original brief, do not finalise. Superseded in practice
+    by --color-brass above; kept here until the brand is locked.
   */
   --color-accent: #9A7B4F;
-
-  /* Neutral grey used for image placeholder boxes. */
-  --color-stone: #e7e5e1;
 
   /* Fonts. Cinzel for the wordmark and big headings, EB Garamond for body. */
   --font-display: "Cinzel", Georgia, "Times New Roman", serif;

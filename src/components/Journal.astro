@@ -1,4 +1,7 @@
 ---
+import Eyebrow from "./Eyebrow.astro";
+import ArchCrown from "./ArchCrown.astro";
+
 // TODO: confirm real Substack URL and pull the latest few posts.
 // For now this is a static placeholder list, no live feed.
 const journalUrl = "https://turathi.substack.com";
@@ -9,13 +12,13 @@ const posts = [
 ];
 ---
 
-<section class="bg-stone/60">
-  <div class="max-w-6xl mx-auto px-4 py-24">
+<section class="border-y border-brass/15 bg-stone/50 naqsh">
+  <div class="mx-auto max-w-6xl px-4 py-24">
     <div class="flex items-end justify-between gap-4">
       <div>
-        <p class="text-sm uppercase tracking-wider text-accent">Journal</p>
-        <h2 class="mt-3 text-2xl sm:text-3xl text-navy">Latest writing</h2>
-        <p class="mt-3 text-navy/70 max-w-lg">
+        <Eyebrow>Journal</Eyebrow>
+        <h2 class="mt-4 text-2xl text-navy sm:text-3xl">Latest writing</h2>
+        <p class="mt-4 max-w-lg text-navy/70">
           I write down the arguments I can't fit into a caption. Longer thoughts
           on building a Bahrain that still feels like Bahrain.
         </p>
@@ -24,22 +27,23 @@ const posts = [
         href={journalUrl}
         target="_blank"
         rel="noopener"
-        class="hidden sm:inline text-navy/80 hover:text-navy text-sm"
+        class="hidden text-sm text-navy/80 underline-offset-8 decoration-brass hover:text-navy hover:underline sm:inline"
       >
         Read on Substack
       </a>
     </div>
 
-    <div class="mt-10 grid gap-6 sm:grid-cols-3">
+    <div class="mt-12 grid gap-6 sm:grid-cols-3">
       {
         posts.map((p) => (
           <a
             href={journalUrl}
             target="_blank"
             rel="noopener"
-            class="block bg-white border border-navy/10 p-6 hover:border-navy/30 transition-colors"
+            class="block border-t-2 border-brass/70 bg-paper px-6 pb-6 pt-5 transition-colors hover:border-brass"
           >
-            <p class="text-xs uppercase tracking-wider text-navy/40">{p.date}</p>
+            <ArchCrown class="mb-4 w-10" />
+            <p class="text-xs uppercase tracking-[0.2em] text-navy/40">{p.date}</p>
             <h3 class="mt-2 text-lg text-navy">{p.title}</h3>
           </a>
         ))

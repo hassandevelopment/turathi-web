@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Placeholder from "../components/Placeholder.astro";
+import Eyebrow from "../components/Eyebrow.astro";
 
 // Partners strip placeholders. Real logos added later.
 const partners = ["Partner 01", "Partner 02", "Partner 03", "Partner 04"];
@@ -10,11 +11,13 @@ const partners = ["Partner 01", "Partner 02", "Partner 03", "Partner 04"];
   title="About | Turathi"
   description="I'm Ammar, a Bahraini architect and mechanical engineer. Turathi is the movement I'm building."
 >
-  <section class="max-w-6xl mx-auto px-4 py-24">
-    <div class="grid gap-10 md:grid-cols-2 items-start">
+  <section class="mx-auto max-w-6xl px-4 py-24">
+    <div class="grid items-start gap-12 md:grid-cols-2">
       <div>
-        <h1 class="text-3xl sm:text-5xl text-navy">About</h1>
-        <p class="mt-6 text-lg text-navy/70 max-w-xl">
+        <Eyebrow>About</Eyebrow>
+        <h1 class="mt-4 text-3xl text-navy sm:text-5xl">About</h1>
+        <span class="mt-5 block h-px w-16 bg-brass"></span>
+        <p class="mt-6 max-w-xl text-lg text-navy/70">
           I'm Ammar, a Bahraini architect and mechanical engineer. Turathi is
           what I'm building: a movement for a Bahrain that grows without losing
           itself. I grew up around buildings that knew how to keep you cool,
@@ -22,31 +25,32 @@ const partners = ["Partner 01", "Partner 02", "Partner 03", "Partner 04"];
           back. Not as nostalgia, but as the better answer we stopped using.
         </p>
       </div>
-      {/* Real photo of him pending his shoot. */}
-      <Placeholder label="Photo of Ammar" class="w-full aspect-[4/5]" />
+      {/* Real photo of Ammar pending his shoot. */}
+      <Placeholder label="Photo of Ammar" class="mx-auto w-full max-w-sm aspect-[4/5]" />
     </div>
   </section>
 
   {/* Works and Projects are folded into About for now, until real client work exists. */}
-  <section class="max-w-6xl mx-auto px-4 pb-24">
+  <section class="mx-auto max-w-6xl px-4 pb-24">
     <h2 class="text-2xl text-navy">Selected work</h2>
-    <p class="mt-3 text-navy/70 max-w-2xl">
+    <span class="mt-4 block h-px w-16 bg-brass"></span>
+    <p class="mt-4 max-w-2xl text-navy/70">
       I have no built projects to show yet. That's honest. What I can show is how
       I think and how I draw, and this page will grow as real work lands.
     </p>
-    <div class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
-      <Placeholder label="Project 01" class="aspect-[4/3]" />
-      <Placeholder label="Project 02" class="aspect-[4/3]" />
-      <Placeholder label="Project 03" class="aspect-[4/3]" />
+    <div class="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3">
+      <Placeholder label="Project 01" class="aspect-[4/5]" />
+      <Placeholder label="Project 02" class="aspect-[4/5]" />
+      <Placeholder label="Project 03" class="aspect-[4/5]" />
     </div>
   </section>
 
   {/* Partners strip. */}
-  <section class="bg-stone/60">
-    <div class="max-w-6xl mx-auto px-4 py-16">
-      <p class="text-sm uppercase tracking-wider text-navy/50">Partners</p>
-      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-        {partners.map((p) => <Placeholder label={p} class="h-20" />)}
+  <section class="border-y border-brass/15 bg-stone/50 naqsh">
+    <div class="mx-auto max-w-6xl px-4 py-16">
+      <Eyebrow>Partners</Eyebrow>
+      <div class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+        {partners.map((p) => <Placeholder label={p} variant="band" class="h-20" />)}
       </div>
     </div>
   </section>

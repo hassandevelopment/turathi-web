@@ -1,0 +1,17 @@
+---
+// Section eyebrow: a glass-star jewel plus a Cinzel small-caps, letter-spaced
+// brass label. Standardises the section labels without changing their copy.
+import Star from "./Star.astro";
+interface Props {
+  star?: "blue" | "green" | "brass";
+  class?: string;
+}
+const { star = "blue", class: className = "" } = Astro.props;
+---
+
+<p
+  class={`flex items-center gap-3 font-display text-[0.72rem] font-semibold uppercase tracking-[0.3em] text-brass ${className}`}
+>
+  <Star tone={star} class="w-3.5 h-3.5 shrink-0" />
+  <span><slot /></span>
+</p>

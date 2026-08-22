@@ -1,18 +1,24 @@
 ---
 import Button from "./Button.astro";
 import Placeholder from "./Placeholder.astro";
+import Fanlight from "./Fanlight.astro";
 ---
 
 <section class="relative">
-  {/* Heritage image sits behind the hero. Grey placeholder box for now. */}
+  {/* Heritage image sits behind the hero. Styled band placeholder for now. */}
   <Placeholder
     label="Hero heritage image"
-    class="absolute inset-0 w-full h-full"
+    variant="band"
+    class="absolute inset-0 h-full w-full border-0"
   />
 
-  <div class="relative max-w-6xl mx-auto px-4 py-28 sm:py-40">
-    <div class="max-w-3xl bg-white/85 backdrop-blur-sm p-8 sm:p-10">
-      <h1 class="text-3xl sm:text-5xl leading-tight text-navy">
+  <div class="relative mx-auto max-w-6xl px-4 py-28 sm:py-40">
+    <div
+      class="max-w-3xl border-t-2 border-brass bg-paper/90 p-8 shadow-sm backdrop-blur-sm sm:p-12"
+    >
+      {/* The one stained-glass jewel on the site, crowning the hero. */}
+      <Fanlight class="mb-7 w-24" />
+      <h1 class="text-3xl leading-tight text-navy sm:text-5xl">
         Bahrain can grow without losing what makes it Bahrain.
       </h1>
       <p class="mt-5 text-lg text-navy/70">

@@ -2,13 +2,16 @@
 @import "./tokens.css";
 
 /*
-  Base element styling. Body text is EB Garamond, headings are Cinzel.
-  Fonts themselves are imported as @fontsource packages in BaseLayout.astro.
+  Base element styling. Body text is EB Garamond on warm sandy plaster,
+  headings are Cinzel, letter-spaced so they read like carved stone.
+  Fonts are imported as @fontsource packages in BaseLayout.astro.
 */
 body {
   font-family: var(--font-body);
   color: var(--color-navy);
-  background-color: var(--color-white);
+  background-color: var(--color-paper);
+  font-size: 1.0625rem;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -18,5 +21,31 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  letter-spacing: 0.01em;
+  line-height: 1.18;
+  letter-spacing: 0.03em;
+}
+
+/* Comfortable reading measure for running body copy. */
+p {
+  max-width: 68ch;
+}
+
+::selection {
+  background-color: var(--color-brass);
+  color: var(--color-paper);
+}
+
+/*
+  Naqsh: carved-screen (pierced gypsum) texture. Very low opacity so text
+  stays crisp. Two nested lozenges tile seamlessly into a fine diaper net.
+  .naqsh for light/sandy surfaces, .naqsh-light for navy bands.
+*/
+.naqsh {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%3E%3Cg%20fill='none'%20stroke='%231B2A6B'%20stroke-opacity='0.12'%20stroke-width='1'%3E%3Cpath%20d='M22,0L44,22L22,44L0,22Z'/%3E%3Cpath%20d='M22,8L36,22L22,36L8,22Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 44px 44px;
+}
+
+.naqsh-light {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%3E%3Cg%20fill='none'%20stroke='%23F1E9D8'%20stroke-opacity='0.10'%20stroke-width='1'%3E%3Cpath%20d='M22,0L44,22L22,44L0,22Z'/%3E%3Cpath%20d='M22,8L36,22L22,36L8,22Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 44px 44px;
 }

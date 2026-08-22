@@ -1,6 +1,8 @@
 ---
-// Simple CTA link. variant "solid" is the navy filled button,
-// "outline" is a bordered variant for secondary use.
+// Crafted CTA link. Navy fill with a brass underline detail that appears on
+// hover, consistent everywhere. Cinzel, letter-spaced small caps.
+// variant "solid" is the navy filled button, "outline" bordered navy for
+// light surfaces, "light-outline" bordered paper for navy surfaces.
 interface Props {
   href: string;
   variant?: "solid" | "outline" | "light-outline";
@@ -9,15 +11,18 @@ interface Props {
 const { href, variant = "solid", class: className = "" } = Astro.props;
 
 const base =
-  "inline-block font-display uppercase tracking-wider text-sm px-6 py-3 transition-colors";
+  "group relative inline-flex items-center font-display uppercase text-xs tracking-[0.22em] px-7 py-3.5 border transition-colors duration-200";
 const variants = {
-  solid: "bg-navy text-white hover:bg-accent",
-  outline: "border border-navy text-navy hover:bg-navy hover:text-white",
-  "light-outline": "border border-white text-white hover:bg-white hover:text-navy",
+  solid: "bg-navy text-paper border-navy hover:bg-navy/90",
+  outline: "text-navy border-navy/40 hover:border-navy",
+  "light-outline": "text-paper border-paper/40 hover:border-paper",
 };
-const styles = variants[variant];
 ---
 
-<a href={href} class={`${base} ${styles} ${className}`}>
+<a href={href} class={`${base} ${variants[variant]} ${className}`}>
   <slot />
+  {/* Brass underline detail, drawn on hover. */}
+  <span
+    class="pointer-events-none absolute bottom-2 left-7 right-7 h-px origin-left scale-x-0 bg-brass transition-transform duration-200 group-hover:scale-x-100"
+  ></span>
 </a>

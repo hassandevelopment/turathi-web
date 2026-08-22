@@ -1,14 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Eyebrow from "../components/Eyebrow.astro";
+import Star from "../components/Star.astro";
 ---
 
 <BaseLayout
   title="Work with me | Turathi"
   description="Work with me on interiors and buildings that belong to Bahrain."
 >
-  <section class="max-w-4xl mx-auto px-4 py-24">
-    <h1 class="text-3xl sm:text-5xl text-navy">Work with me</h1>
-    <p class="mt-5 text-lg text-navy/70 max-w-2xl">
+  <section class="mx-auto max-w-4xl px-4 py-24">
+    <Eyebrow>Work with me</Eyebrow>
+    <h1 class="mt-4 text-3xl text-navy sm:text-5xl">Work with me</h1>
+    <span class="mt-5 block h-px w-16 bg-brass"></span>
+    <p class="mt-6 max-w-2xl text-lg text-navy/70">
       If you are building in Bahrain and you want it to belong here, work with
       me. I take on interiors, buildings and the thinking behind them, and I
       would rather do a few things properly than many things fast.
@@ -17,15 +21,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     {/* Contact section lives on this page per the sitemap. */}
     <div id="contact" class="mt-16">
       <h2 class="text-2xl text-navy">Get in touch</h2>
-      <p class="mt-3 text-navy/70 max-w-2xl">
+      <p class="mt-3 max-w-2xl text-navy/70">
         Tell me what you are building and where. I read every message myself.
       </p>
 
       {/* TODO: contact form (spam-protected, no database, no login) goes here. Not wired yet. */}
       <div
-        class="mt-8 border border-dashed border-navy/30 p-10 text-center text-navy/50"
+        class="mt-8 flex flex-col items-center gap-3 border border-dashed border-brass/50 bg-stone/30 p-10 text-center"
       >
-        Contact form placeholder
+        <Star tone="brass" class="h-5 w-5" />
+        <span class="font-display text-[0.62rem] uppercase tracking-[0.28em] text-navy/50">
+          Contact form placeholder
+        </span>
       </div>
     </div>
   </section>
