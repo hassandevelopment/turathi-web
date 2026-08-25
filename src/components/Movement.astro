@@ -1,7 +1,8 @@
 ---
 import Button from "./Button.astro";
-import Placeholder from "./Placeholder.astro";
 import Eyebrow from "./Eyebrow.astro";
+import ArchImage from "./ArchImage.astro";
+import blueDoor from "../assets/heritage/blue-door.jpg";
 ---
 
 <section class="border-y border-brass/15 bg-stone/50 naqsh">
@@ -20,6 +21,10 @@ import Eyebrow from "./Eyebrow.astro";
         <Button href="/the-movement" variant="outline">Read the movement</Button>
       </div>
     </div>
-    <Placeholder label="Movement image" class="mx-auto w-full max-w-sm aspect-[4/5]" />
+    <ArchImage
+      src={blueDoor}
+      alt="Weathered blue-grey door of a Bahraini heritage house"
+      class="mx-auto w-full max-w-sm aspect-[4/5]"
+    />
   </div>
 </section>

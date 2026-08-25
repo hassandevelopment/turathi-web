@@ -1,9 +1,23 @@
 ---
+import { Image } from "astro:assets";
 import Star from "./Star.astro";
+import archedDoors from "../assets/heritage/arched-doors.jpg";
 ---
 
-<section class="bg-navy text-paper naqsh-light">
-  <div class="mx-auto max-w-4xl px-4 py-24 text-center">
+<section class="relative overflow-hidden bg-navy text-paper">
+  {/* Heritage arched doors as a texture band, held well back under a strong
+      navy overlay so the belief statement stays fully readable. */}
+  <Image
+    src={archedDoors}
+    alt="Row of carved arched doors in a Bahraini heritage house"
+    widths={[768, 1280, 1920]}
+    sizes="100vw"
+    loading="lazy"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+  <div class="absolute inset-0 bg-navy/85 naqsh-light"></div>
+
+  <div class="relative mx-auto max-w-4xl px-4 py-24 text-center">
     <Star tone="brass" class="mx-auto mb-8 h-5 w-5" />
     <h2 class="text-2xl leading-snug sm:text-4xl">
       Maybe it's not a climate issue. Maybe it's a design issue.

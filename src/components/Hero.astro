@@ -1,20 +1,26 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
-import Placeholder from "./Placeholder.astro";
 import Fanlight from "./Fanlight.astro";
+import courtyard from "../assets/heritage/courtyard.jpg";
 ---
 
-<section class="relative">
-  {/* Heritage image sits behind the hero. Styled band placeholder for now. */}
-  <Placeholder
-    label="Hero heritage image"
-    variant="band"
-    class="absolute inset-0 h-full w-full border-0"
+<section class="relative overflow-hidden">
+  {/* Heritage courtyard behind the hero, with a navy overlay so the headline
+      and subline stay fully readable. Eager: this is the LCP image. */}
+  <Image
+    src={courtyard}
+    alt="Courtyard of a traditional Bahraini heritage house"
+    widths={[768, 1280, 1920]}
+    sizes="100vw"
+    loading="eager"
+    class="absolute inset-0 h-full w-full object-cover"
   />
+  <div class="absolute inset-0 bg-navy/55"></div>
 
   <div class="relative mx-auto max-w-6xl px-4 py-28 sm:py-40">
     <div
-      class="max-w-3xl border-t-2 border-brass bg-paper/90 p-8 shadow-sm backdrop-blur-sm sm:p-12"
+      class="max-w-3xl border-t-2 border-brass bg-paper/90 p-8 shadow-md backdrop-blur-sm sm:p-12"
     >
       {/* The one stained-glass jewel on the site, crowning the hero. */}
       <Fanlight class="mb-7 w-24" />

@@ -1,23 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Eyebrow from "../components/Eyebrow.astro";
+import ArchImage from "../components/ArchImage.astro";
+import windTower from "../assets/heritage/wind-tower.jpg";
 ---
 
 <BaseLayout
   title="The Turathi Octagon | Turathi"
   description="How I honour the places that keep their heritage alive."
 >
-  <section class="mx-auto max-w-4xl px-4 py-24">
-    <Eyebrow>The Turathi Octagon</Eyebrow>
-    <h1 class="mt-4 text-3xl text-navy sm:text-5xl">The Turathi Octagon</h1>
-    <span class="mt-5 block h-px w-16 bg-brass"></span>
-    <p class="mt-6 max-w-2xl text-lg text-navy/70">
-      The Turathi Octagon is how I honour the places that kept their heritage
-      alive, in their food, their form and the way they treat a guest. Tradition
-      isn't nostalgia. It's the better answer we stopped using.
-    </p>
-    <p class="mt-4 max-w-2xl text-navy/50">
-      The tiers and how to take part are still being finalised (placeholder).
-    </p>
+  <section class="mx-auto max-w-6xl px-4 py-24">
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div>
+        <Eyebrow>The Turathi Octagon</Eyebrow>
+        <h1 class="mt-4 text-3xl text-navy sm:text-5xl">The Turathi Octagon</h1>
+        <span class="mt-5 block h-px w-16 bg-brass"></span>
+        <p class="mt-6 max-w-2xl text-lg text-navy/70">
+          The Turathi Octagon is how I honour the places that kept their
+          heritage alive, in their food, their form and the way they treat a
+          guest. Tradition isn't nostalgia. It's the better answer we stopped
+          using.
+        </p>
+        <p class="mt-4 max-w-2xl text-navy/50">
+          The tiers and how to take part are still being finalised (placeholder).
+        </p>
+      </div>
+      <ArchImage
+        src={windTower}
+        alt="Wind tower of a traditional Bahraini heritage house"
+        class="mx-auto w-full max-w-sm aspect-[4/5]"
+      />
+    </div>
   </section>
 </BaseLayout>

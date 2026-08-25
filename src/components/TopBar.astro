@@ -16,11 +16,18 @@ const journalUrl = "https://turathi.substack.com";
 <header class="sticky top-0 z-40 border-b border-brass/25 bg-paper/90 backdrop-blur">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
     <a href="/" class="flex items-center gap-3" aria-label="Turathi home">
-      {/* Logo placeholder. Swap for the real door-motif mark when provided. */}
+      {/*
+        Interim wordmark: the door-square holding the eight-point star mark.
+        TODO: replace this navy square + star with Ammar's real logo art
+        once he sends the file.
+      */}
       <span
-        class="inline-flex h-9 w-9 items-center justify-center bg-navy font-display text-xs text-paper ring-1 ring-brass/40"
-        >TB</span
+        class="inline-flex h-9 w-9 items-center justify-center bg-navy ring-1 ring-brass/40"
       >
+        <svg viewBox="0 0 24 24" class="h-4 w-4 text-paper" aria-hidden="true">
+          <use href="#turathiStar"></use>
+        </svg>
+      </span>
       <span class="font-display text-lg uppercase tracking-[0.2em] text-navy"
         >Turathi</span
       >

@@ -2,6 +2,8 @@
 import Button from "./Button.astro";
 import Eyebrow from "./Eyebrow.astro";
 import ArchCrown from "./ArchCrown.astro";
+import ArchImage from "./ArchImage.astro";
+import windTower from "../assets/heritage/wind-tower.jpg";
 
 // Tier definitions are facts only Turathi confirms. Kept as labelled placeholders.
 const tiers = [
@@ -13,16 +15,27 @@ const tiers = [
 
 <section class="bg-navy text-paper naqsh-light">
   <div class="mx-auto max-w-6xl px-4 py-24">
-    <Eyebrow>The Turathi Octagon</Eyebrow>
-    <h2 class="mt-4 text-2xl sm:text-3xl">What it is</h2>
-    <span class="mt-4 block h-px w-16 bg-brass"></span>
-    <p class="mt-4 max-w-2xl text-paper/75">
-      The Turathi Octagon is how I honour the places that kept their heritage
-      alive, in their food, their form and the way they treat a guest. Tradition
-      isn't nostalgia. It's the better answer we stopped using.
-    </p>
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <div>
+        <Eyebrow>The Turathi Octagon</Eyebrow>
+        <h2 class="mt-4 text-2xl sm:text-3xl">What it is</h2>
+        <span class="mt-4 block h-px w-16 bg-brass"></span>
+        <p class="mt-4 max-w-2xl text-paper/75">
+          The Turathi Octagon is how I honour the places that kept their
+          heritage alive, in their food, their form and the way they treat a
+          guest. Tradition isn't nostalgia. It's the better answer we stopped
+          using.
+        </p>
+      </div>
+      <ArchImage
+        src={windTower}
+        alt="Wind tower of a traditional Bahraini heritage house"
+        frame="light"
+        class="mx-auto w-full max-w-sm aspect-[4/5]"
+      />
+    </div>
 
-    <div class="mt-12 grid gap-6 sm:grid-cols-3">
+    <div class="mt-16 grid gap-6 sm:grid-cols-3">
       {
         tiers.map((t) => (
           <div class="border border-paper/15 px-6 pb-6 pt-5">

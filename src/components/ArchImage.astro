@@ -1,0 +1,59 @@
+---
+// A real heritage photo framed in the same pointed arch as the placeholders:
+// the image is clipped to the arch, with the navy outline and brass inner line
+// on top. Uses Astro's optimised, lazy-loaded Image component.
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  class?: string;
+  eager?: boolean;
+  // "light" frame for use on navy backgrounds so the outline stays visible.
+  frame?: "dark" | "light";
+}
+const {
+  src,
+  alt,
+  class: className = "",
+  eager = false,
+  frame = "dark",
+} = Astro.props;
+const outer = frame === "light" ? "#F1E9D8" : "#1B2A6B";
+---
+
+<div class={`relative ${className}`}>
+  <div
+    class="absolute inset-0 overflow-hidden"
+    style="clip-path:url(#turathiArch);-webkit-clip-path:url(#turathiArch)"
+  >
+    <Image
+      src={src}
+      alt={alt}
+      widths={[400, 700, 1000]}
+      sizes="(max-width: 768px) 90vw, 40vw"
+      loading={eager ? "eager" : "lazy"}
+      class="h-full w-full object-cover"
+    />
+  </div>
+  <svg
+    class="absolute inset-0 h-full w-full"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M0,100 L0,44 Q8,3 50,0 Q92,3 100,44 L100,100"
+      fill="none"
+      stroke={outer}
+      stroke-width="1.5"
+      vector-effect="non-scaling-stroke"></path>
+    <path
+      d="M4,100 L4,46 Q11,7 50,4 Q89,7 96,46 L96,100"
+      fill="none"
+      stroke="#B08A46"
+      stroke-width="0.75"
+      vector-effect="non-scaling-stroke"></path>
+  </svg>
+</div>
