@@ -1,13 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Eyebrow from "../components/Eyebrow.astro";
-import ArchImage from "../components/ArchImage.astro";
-import octagonEmblem from "../assets/heritage/turathi-octogan-3.jpeg";
+import octagonExplained from "../assets/heritage/turathi-octogan-explained.jpeg";
 ---
 
 <BaseLayout
   title="The Turathi Octagon | Turathi"
-  description="How I honour the places that keep their heritage alive."
+  description="A star rating for restaurants that embody the finest traditions of their cuisine and heritage."
 >
   <section class="mx-auto max-w-6xl px-4 py-24">
     <div class="grid items-center gap-12 md:grid-cols-2">
@@ -16,19 +16,23 @@ import octagonEmblem from "../assets/heritage/turathi-octogan-3.jpeg";
         <h1 class="mt-4 text-3xl text-navy sm:text-5xl">The Turathi Octagon</h1>
         <span class="mt-5 block h-px w-16 bg-brass"></span>
         <p class="mt-6 max-w-2xl text-lg text-navy/70">
-          The Turathi Octagon is how I honour the places that kept their
-          heritage alive, in their food, their form and the way they treat a
-          guest. Tradition isn't nostalgia. It's the better answer we stopped
-          using.
+          The Turathi Octagon is how I honour restaurants that embody the finest
+          traditions of their cuisine and heritage. Tradition isn't nostalgia.
+          It's the better answer we stopped using.
         </p>
-        <p class="mt-4 max-w-2xl text-navy/50">
-          The tiers and how to take part are still being finalised (placeholder).
+        <p class="mt-4 max-w-2xl text-navy/70">
+          One to three stars mark how fully a place carries its heritage: Fine
+          Cooking, a Distinguished Table, and a Cultural Landmark.
         </p>
       </div>
-      <ArchImage
-        src={octagonEmblem}
-        alt="The Turathi Octagon emblem"
-        class="mx-auto w-full max-w-sm aspect-square"
+
+      {/* The explainer graphic, shown whole. */}
+      <Image
+        src={octagonExplained}
+        alt="The Turathi Octagon explained: Fine Cooking is one star for cooking well made and rooted in tradition, Distinguished Table is two stars for a vivid sense of place, Cultural Landmark is three stars for a living expression of its heritage"
+        widths={[500, 800, 1024]}
+        sizes="(max-width: 768px) 92vw, 45vw"
+        class="mx-auto h-auto w-full max-w-lg border-t-2 border-brass shadow-sm"
       />
     </div>
   </section>

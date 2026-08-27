@@ -1,15 +1,16 @@
 ---
 import Button from "./Button.astro";
 import Eyebrow from "./Eyebrow.astro";
-import ArchCrown from "./ArchCrown.astro";
+import Star from "./Star.astro";
 import ArchImage from "./ArchImage.astro";
 import octagonEmblem from "../assets/heritage/turathi-octogan-3.jpeg";
 
-// Tier definitions are facts only Turathi confirms. Kept as labelled placeholders.
+// The Turathi Octagon tiers: a star rating for restaurants that embody the
+// finest traditions of their cuisine and heritage.
 const tiers = [
-  { name: "Tier one", body: "Tier definition to be confirmed (placeholder)." },
-  { name: "Tier two", body: "Tier definition to be confirmed (placeholder)." },
-  { name: "Tier three", body: "Tier definition to be confirmed (placeholder)." },
+  { stars: 1, name: "Fine Cooking", body: "Well made, rooted in tradition." },
+  { stars: 2, name: "Distinguished Table", body: "A vivid sense of place." },
+  { stars: 3, name: "Cultural Landmark", body: "A living expression of its heritage." },
 ];
 ---
 
@@ -21,10 +22,13 @@ const tiers = [
         <h2 class="mt-4 text-2xl sm:text-3xl">What it is</h2>
         <span class="mt-4 block h-px w-16 bg-brass"></span>
         <p class="mt-4 max-w-2xl text-paper/75">
-          The Turathi Octagon is how I honour the places that kept their
-          heritage alive, in their food, their form and the way they treat a
-          guest. Tradition isn't nostalgia. It's the better answer we stopped
-          using.
+          The Turathi Octagon is how I honour restaurants that embody the finest
+          traditions of their cuisine and heritage. Tradition isn't nostalgia.
+          It's the better answer we stopped using.
+        </p>
+        <p class="mt-4 max-w-2xl text-paper/60">
+          Three tiers, one to three stars, mark how fully a place carries its
+          heritage.
         </p>
       </div>
       <ArchImage
@@ -38,10 +42,14 @@ const tiers = [
     <div class="mt-16 grid gap-6 sm:grid-cols-3">
       {
         tiers.map((t) => (
-          <div class="border border-paper/15 px-6 pb-6 pt-5">
-            <ArchCrown tone="light" class="mx-auto mb-4 w-12" />
-            <h3 class="text-center text-xl">{t.name}</h3>
-            <p class="mt-2 text-center text-sm text-paper/70">{t.body}</p>
+          <div class="border border-paper/15 px-6 pb-6 pt-6 text-center">
+            <div class="flex items-center justify-center gap-1.5">
+              {Array.from({ length: t.stars }).map(() => (
+                <Star tone="brass" class="h-4 w-4" />
+              ))}
+            </div>
+            <h3 class="mt-4 text-xl">{t.name}</h3>
+            <p class="mt-2 text-sm text-paper/70">{t.body}</p>
           </div>
         ))
       }
