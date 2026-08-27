@@ -4,6 +4,7 @@ import Placeholder from "../components/Placeholder.astro";
 import Eyebrow from "../components/Eyebrow.astro";
 import ArchImage from "../components/ArchImage.astro";
 import veranda from "../assets/heritage/veranda.jpg";
+import ammar from "../assets/heritage/Turathi-Ammar.jpeg";
 
 // Partners strip placeholders. Real logos added later.
 const partners = ["Partner 01", "Partner 02", "Partner 03", "Partner 04"];
@@ -26,10 +27,11 @@ const partners = ["Partner 01", "Partner 02", "Partner 03", "Partner 04"];
           bring people together and still feel like they belonged. I want that
           back. Not as nostalgia, but as the better answer we stopped using.
         </p>
-        {/* Ammar's real portrait is pending his shoot: kept a labelled placeholder. */}
-        <Placeholder
-          label="Photo of Ammar"
-          class="mt-8 w-36 aspect-[4/5]"
+        {/* Ammar's portrait. */}
+        <ArchImage
+          src={ammar}
+          alt="Ammar, the architect behind Turathi"
+          class="mt-8 w-44 aspect-[3/4]"
         />
       </div>
       {/* Main heritage image on About. */}
