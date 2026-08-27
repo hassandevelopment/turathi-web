@@ -2,59 +2,28 @@
 import { Image } from "astro:assets";
 import Button from "./Button.astro";
 import Eyebrow from "./Eyebrow.astro";
-import Star from "./Star.astro";
-import octagonEmblem from "../assets/heritage/turathi-octogan-3.jpeg";
-
-// The Turathi Octagon tiers: a star rating for restaurants that embody the
-// finest traditions of their cuisine and heritage.
-const tiers = [
-  { stars: 1, name: "Fine Cooking", body: "Well made, rooted in tradition." },
-  { stars: 2, name: "Distinguished Table", body: "A vivid sense of place." },
-  { stars: 3, name: "Cultural Landmark", body: "A living expression of its heritage." },
-];
+import octagonExplained from "../assets/heritage/turathi-octogan-explained.jpeg";
 ---
 
 <section class="bg-navy text-paper naqsh-light">
   <div class="mx-auto max-w-6xl px-4 py-24">
-    <div class="grid items-center gap-12 md:grid-cols-2">
-      <div>
-        <Eyebrow>The Turathi Octagon</Eyebrow>
-        <h2 class="mt-4 text-2xl sm:text-3xl">What it is</h2>
-        <span class="mt-4 block h-px w-16 bg-brass"></span>
-        <p class="mt-4 max-w-2xl text-paper/75">
-          The Turathi Octagon is how I honour restaurants that embody the finest
-          traditions of their cuisine and heritage. Tradition isn't nostalgia.
-          It's the better answer we stopped using.
-        </p>
-        <p class="mt-4 max-w-2xl text-paper/60">
-          Three tiers, one to three stars, mark how fully a place carries its
-          heritage.
-        </p>
-      </div>
-      <Image
-        src={octagonEmblem}
-        alt="The Turathi Octagon emblem"
-        widths={[400, 600, 800]}
-        sizes="(max-width: 768px) 80vw, 40vw"
-        class="mx-auto w-full max-w-sm"
-      />
-    </div>
+    <Eyebrow>The Turathi Octagon</Eyebrow>
+    <h2 class="mt-4 text-2xl sm:text-3xl">What it is</h2>
+    <span class="mt-4 block h-px w-16 bg-brass"></span>
+    <p class="mt-4 max-w-2xl text-paper/75">
+      The Turathi Octagon is how I honour restaurants that embody the finest
+      traditions of their cuisine and heritage. Tradition isn't nostalgia. It's
+      the better answer we stopped using.
+    </p>
 
-    <div class="mt-16 grid gap-6 sm:grid-cols-3">
-      {
-        tiers.map((t) => (
-          <div class="border border-paper/15 px-6 pb-6 pt-6 text-center">
-            <div class="flex items-center justify-center gap-1.5">
-              {Array.from({ length: t.stars }).map(() => (
-                <Star tone="brass" class="h-4 w-4" />
-              ))}
-            </div>
-            <h3 class="mt-4 text-xl">{t.name}</h3>
-            <p class="mt-2 text-sm text-paper/70">{t.body}</p>
-          </div>
-        ))
-      }
-    </div>
+    {/* The Octagon explained: three tiers, one to three stars. */}
+    <Image
+      src={octagonExplained}
+      alt="The Turathi Octagon explained: Fine Cooking is one star for cooking well made and rooted in tradition, Distinguished Table is two stars for a vivid sense of place, Cultural Landmark is three stars for a living expression of its heritage"
+      widths={[500, 800, 1024]}
+      sizes="(max-width: 768px) 92vw, 60vw"
+      class="mt-10 h-auto w-full max-w-3xl border-t-2 border-brass shadow-sm"
+    />
 
     <div class="mt-12">
       <Button href="/the-turathi-octagon" variant="light-outline">Explore the Octagon</Button>
