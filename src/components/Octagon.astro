@@ -1,8 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
 import Eyebrow from "./Eyebrow.astro";
 import Star from "./Star.astro";
-import ArchImage from "./ArchImage.astro";
 import octagonEmblem from "../assets/heritage/turathi-octogan-3.jpeg";
 
 // The Turathi Octagon tiers: a star rating for restaurants that embody the
@@ -31,11 +31,12 @@ const tiers = [
           heritage.
         </p>
       </div>
-      <ArchImage
+      <Image
         src={octagonEmblem}
         alt="The Turathi Octagon emblem"
-        frame="light"
-        class="mx-auto w-full max-w-sm aspect-square"
+        widths={[400, 600, 800]}
+        sizes="(max-width: 768px) 80vw, 40vw"
+        class="mx-auto w-full max-w-sm"
       />
     </div>
 
