@@ -7,11 +7,11 @@
 */
 @theme {
   /*
-    REPLACE with exact navy from Turathi logo. NEVER #0000FF.
-    #1B2A6B is a PLACEHOLDER deep royal navy only, pending the real hex
-    pulled from his logo file. Navy is now an accent band, not the whole mood.
+    Real brand navy, sampled from Ammar's Turathi logo file
+    (src/assets/heritage/turathi-logo.jpeg). Deep royal blue, NEVER #0000FF.
+    Navy is an accent band, not the whole mood.
   */
-  --color-navy: #1B2A6B;
+  --color-navy: #1A2189;
 
   /* Second brand colour. */
   --color-white: #ffffff;

@@ -41,7 +41,7 @@ p {
   .naqsh for light/sandy surfaces, .naqsh-light for navy bands.
 */
 .naqsh {
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%3E%3Cg%20fill='none'%20stroke='%231B2A6B'%20stroke-opacity='0.12'%20stroke-width='1'%3E%3Cpath%20d='M22,0L44,22L22,44L0,22Z'/%3E%3Cpath%20d='M22,8L36,22L22,36L8,22Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%3E%3Cg%20fill='none'%20stroke='%231A2189'%20stroke-opacity='0.12'%20stroke-width='1'%3E%3Cpath%20d='M22,0L44,22L22,44L0,22Z'/%3E%3Cpath%20d='M22,8L36,22L22,36L8,22Z'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 44px 44px;
 }
 

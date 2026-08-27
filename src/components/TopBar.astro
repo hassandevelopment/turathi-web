@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
+import mark from "../assets/turathi-mark.png";
 
 // Internal nav plus one external link out to the Journal (Substack).
 const navLinks = [
@@ -16,18 +18,14 @@ const journalUrl = "https://turathi.substack.com";
 <header class="sticky top-0 z-40 border-b border-brass/25 bg-paper/90 backdrop-blur">
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
     <a href="/" class="flex items-center gap-3" aria-label="Turathi home">
-      {/*
-        Interim wordmark: the door-square holding the eight-point star mark.
-        TODO: replace this navy square + star with Ammar's real logo art
-        once he sends the file.
-      */}
-      <span
-        class="inline-flex h-9 w-9 items-center justify-center bg-navy ring-1 ring-brass/40"
-      >
-        <svg viewBox="0 0 24 24" class="h-4 w-4 text-paper" aria-hidden="true">
-          <use href="#turathiStar"></use>
-        </svg>
-      </span>
+      {/* Ammar's real door-motif logo mark (navy square, white line drawing). */}
+      <Image
+        src={mark}
+        alt="Turathi"
+        width={80}
+        height={80}
+        class="h-10 w-10 ring-1 ring-brass/40"
+      />
       <span class="font-display text-lg uppercase tracking-[0.2em] text-navy"
         >Turathi</span
       >
