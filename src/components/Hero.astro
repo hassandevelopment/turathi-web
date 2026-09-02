@@ -6,8 +6,7 @@ import courtyard from "../assets/heritage/courtyard.jpg";
 ---
 
 <section class="relative overflow-hidden">
-  {/* Heritage courtyard behind the hero, with a navy overlay so the headline
-      and subline stay fully readable. Eager: this is the LCP image. */}
+  {/* Full-bleed heritage courtyard. Eager: this is the LCP image. */}
   <Image
     src={courtyard}
     alt="Courtyard of a traditional Bahraini heritage house"
@@ -16,24 +15,28 @@ import courtyard from "../assets/heritage/courtyard.jpg";
     loading="eager"
     class="absolute inset-0 h-full w-full object-cover"
   />
+  {/* Navy wash plus a gentle top-to-bottom deepening so the words stay crisp. */}
   <div class="absolute inset-0 bg-navy/55"></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-navy/30 via-transparent to-navy/70"
+  >
+  </div>
 
-  <div class="relative mx-auto max-w-6xl px-4 py-28 sm:py-40">
-    <div
-      class="max-w-3xl border-t-2 border-brass bg-paper/90 p-8 shadow-md backdrop-blur-sm sm:p-12"
-    >
-      {/* The one stained-glass jewel on the site, crowning the hero. */}
-      <Fanlight class="mb-7 w-24" />
-      <h1 class="text-3xl leading-tight text-navy sm:text-5xl">
-        Bahrain can grow without losing what makes it Bahrain.
-      </h1>
-      <p class="mt-5 text-lg text-navy/70">
-        I design homes, buildings and neighbourhoods that grow with Bahrain
-        without letting go of what makes it ours.
-      </p>
-      <div class="mt-8">
-        <Button href="/work-with-me">Work with me</Button>
-      </div>
+  {/* Content in normal flow, centred, tall padding for a full-bleed feel. */}
+  <div
+    class="relative mx-auto max-w-3xl px-4 py-32 text-center text-paper sm:py-44"
+  >
+    {/* The stained-glass jewel, crowning the hero. */}
+    <Fanlight class="mx-auto mb-8 w-24" />
+    <h1 class="text-balance text-3xl leading-tight sm:text-5xl md:text-6xl">
+      Bahrain can grow without losing what makes it Bahrain.
+    </h1>
+    <p class="mx-auto mt-6 max-w-xl text-lg text-paper/85">
+      I design homes, buildings and neighbourhoods that grow with Bahrain
+      without letting go of what makes it ours.
+    </p>
+    <div class="mt-10 flex justify-center">
+      <Button href="/work-with-me">Work with me</Button>
     </div>
   </div>
 </section>
