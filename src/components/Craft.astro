@@ -2,8 +2,6 @@
 import Button from "./Button.astro";
 import Placeholder from "./Placeholder.astro";
 import Eyebrow from "./Eyebrow.astro";
-import ArchImage from "./ArchImage.astro";
-import columnDetail from "../assets/heritage/column-detail.jpg";
 
 // The craft row is proof, not a headline. The four drawing slots stay
 // labelled placeholders until Ammar's real scans arrive.
@@ -11,21 +9,13 @@ const drawings = ["Drawing 01", "Drawing 02", "Drawing 03", "Drawing 04"];
 ---
 
 <section class="mx-auto max-w-6xl px-4 py-24">
-  <div class="grid grid-cols-1 items-center gap-12 md:grid-cols-3">
-    <div class="md:col-span-2">
-      <Eyebrow>The Craft</Eyebrow>
-      <h2 class="mt-4 text-2xl text-navy sm:text-3xl">My drawings</h2>
-      <p class="mt-4 max-w-2xl text-navy/70">
-        Ideas are cheap until you can draw them. These are the details behind the
-        talk, worked out by hand.
-      </p>
-    </div>
-    {/* Small heritage detail accent beside the note. */}
-    <ArchImage
-      src={columnDetail}
-      alt="Carved column detail from a Bahraini heritage house"
-      class="mx-auto w-full max-w-[14rem] aspect-[3/4]"
-    />
+  <div>
+    <Eyebrow>The Craft</Eyebrow>
+    <h2 class="mt-4 text-2xl text-navy sm:text-3xl">My drawings</h2>
+    <p class="mt-4 max-w-2xl text-navy/70">
+      Ideas are cheap until you can draw them. These are the details behind the
+      talk, worked out by hand.
+    </p>
   </div>
 
   <div class="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">

@@ -3,12 +3,14 @@
 // with an eight-point star and a lift + brass glow on hover. Outline variants
 // stay text-only with a brass underline that sweeps in on hover.
 import Star from "./Star.astro";
+import { withBase } from "../lib/url";
 interface Props {
   href: string;
   variant?: "solid" | "outline" | "light-outline";
   class?: string;
 }
 const { href, variant = "solid", class: className = "" } = Astro.props;
+const resolvedHref = withBase(href);
 
 const base =
   "group relative inline-flex items-center justify-center font-display uppercase text-xs tracking-[0.22em] transition-all duration-200";
@@ -22,7 +24,7 @@ const variants = {
 const isSolid = variant === "solid";
 ---
 
-<a href={href} class={`${base} ${variants[variant]} ${className}`}>
+<a href={resolvedHref} class={`${base} ${variants[variant]} ${className}`}>
   {
     isSolid && (
       <span class="pointer-events-none absolute inset-[3px] border border-brass/25 transition-colors duration-200 group-hover:border-brass/60" />
