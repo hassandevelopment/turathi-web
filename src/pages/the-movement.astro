@@ -1,7 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Eyebrow from "../components/Eyebrow.astro";
-import ArchImage from "../components/ArchImage.astro";
 import blueDoor from "../assets/heritage/blue-door.jpg";
 ---
 
@@ -24,10 +24,12 @@ import blueDoor from "../assets/heritage/blue-door.jpg";
           tradition as the better answer we stopped using, not as nostalgia.
         </p>
       </div>
-      <ArchImage
+      <Image
         src={blueDoor}
-        alt="Weathered blue-grey door of a Bahraini heritage house"
-        class="mx-auto w-full max-w-sm aspect-[4/5]"
+        alt="Weathered blue door and carved stone archway of a Bahraini heritage house"
+        widths={[400, 600, 800]}
+        sizes="(max-width: 768px) 90vw, 40vw"
+        class="mx-auto h-auto w-full max-w-sm border-t-2 border-brass shadow-sm"
       />
     </div>
   </section>
