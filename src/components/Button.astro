@@ -1,8 +1,8 @@
 ---
-// Crafted CTA link. Navy fill with a brass underline detail that appears on
-// hover, consistent everywhere. Cinzel, letter-spaced small caps.
-// variant "solid" is the navy filled button, "outline" bordered navy for
-// light surfaces, "light-outline" bordered paper for navy surfaces.
+// Crafted CTA link. The solid (primary) variant is a navy brass-framed plaque
+// with an eight-point star and a lift + brass glow on hover. Outline variants
+// stay text-only with a brass underline that sweeps in on hover.
+import Star from "./Star.astro";
 interface Props {
   href: string;
   variant?: "solid" | "outline" | "light-outline";
@@ -11,18 +11,28 @@ interface Props {
 const { href, variant = "solid", class: className = "" } = Astro.props;
 
 const base =
-  "group relative inline-flex items-center font-display uppercase text-xs tracking-[0.22em] px-7 py-3.5 border transition-colors duration-200";
+  "group relative inline-flex items-center justify-center font-display uppercase text-xs tracking-[0.22em] transition-all duration-200";
 const variants = {
-  solid: "bg-navy text-paper border-navy hover:bg-navy/90",
-  outline: "text-navy border-navy/40 hover:border-navy",
-  "light-outline": "text-paper border-paper/40 hover:border-paper",
+  solid:
+    "gap-2.5 px-8 py-4 bg-navy text-paper border border-brass/70 hover:-translate-y-px hover:shadow-[0_12px_26px_-12px_rgba(176,138,70,0.65)]",
+  outline: "gap-2 px-7 py-3.5 border border-navy/40 text-navy hover:border-navy",
+  "light-outline":
+    "gap-2 px-7 py-3.5 border border-paper/40 text-paper hover:border-paper",
 };
+const isSolid = variant === "solid";
 ---
 
 <a href={href} class={`${base} ${variants[variant]} ${className}`}>
-  <slot />
-  {/* Brass underline detail, drawn on hover. */}
-  <span
-    class="pointer-events-none absolute bottom-2 left-7 right-7 h-px origin-left scale-x-0 bg-brass transition-transform duration-200 group-hover:scale-x-100"
-  ></span>
+  {
+    isSolid && (
+      <span class="pointer-events-none absolute inset-[3px] border border-brass/25 transition-colors duration-200 group-hover:border-brass/60" />
+    )
+  }
+  {isSolid && <Star tone="brass" class="relative h-3 w-3 shrink-0" />}
+  <span class="relative"><slot /></span>
+  {
+    !isSolid && (
+      <span class="pointer-events-none absolute bottom-2 left-7 right-7 h-px origin-left scale-x-0 bg-brass transition-transform duration-200 group-hover:scale-x-100" />
+    )
+  }
 </a>

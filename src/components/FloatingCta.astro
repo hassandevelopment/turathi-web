@@ -1,11 +1,9 @@
 ---
-// Floating "Work with me" button, shown on mobile only. Hidden from md up
-// where the top bar button is always visible.
+// Floating "Work with me" button, shown on mobile only. Reuses the crafted
+// solid button style (brass-framed navy plaque with a star), full width.
+import Button from "./Button.astro";
 ---
 
-<a
-  href="/work-with-me"
-  class="md:hidden fixed bottom-4 inset-x-4 z-50 bg-navy text-white text-center font-display uppercase tracking-wider text-sm py-4 shadow-lg hover:bg-accent transition-colors"
->
-  Work with me
-</a>
+<div class="fixed inset-x-4 bottom-4 z-50 md:hidden">
+  <Button href="/work-with-me" class="w-full shadow-xl">Work with me</Button>
+</div>

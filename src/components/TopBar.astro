@@ -52,6 +52,9 @@ const journalUrl = "https://turathi.substack.com";
       </a>
     </nav>
 
-    <Button href="/work-with-me" class="hidden sm:inline-flex">Work with me</Button>
+    {/* Hidden on mobile, where the floating button (md:hidden) serves the CTA. */}
+    <div class="hidden md:block">
+      <Button href="/work-with-me">Work with me</Button>
+    </div>
   </div>
 </header>
